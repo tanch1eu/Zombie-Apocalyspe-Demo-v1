@@ -55,6 +55,7 @@ def checkAvailablePos(map, cPos, zPos, cID, cNum ):
     else: 
         print("There is a Zombie in this position! \nPlease enter another...")
     return cID, cNum
+
 #Map Initialize, main game simulation
 def MapInit(n):
     x, y = [], []
@@ -90,14 +91,6 @@ def MapInit(n):
         print()
         crtPos = [crt_x_pos, crt_y_pos] #Creature location
         (creatureId, numberCreatures) = checkAvailablePos(map, crtPos, zombiePos, creatureId, numberCreatures)
-        # if map[crtPos[0]][crtPos[1]] == 'X':
-        #     print("There is already a creature here. \nPlease enter another...")
-        # elif crtPos != zombiePos:
-        #     map[crtPos[0]][crtPos[1]] = 'X'
-        #     creatureId += 1
-        #     numberCreatures -= 1
-        # else: 
-        #     print("There is a Zombie in this position! \nPlease enter another...")
     
     # Generate world map
     print("\nInitializing map...")
@@ -230,7 +223,7 @@ def moveZombie(map, zombiePos, moveSeq, finalZombies):
     sleep(2)
     moveDefine(map, zombiePos, moveSeq, zombie, finalZombies)
 
-
+#Main simulation starter
 def SimulationStart():
     n = inputDimension()
     MapInit(n)
